@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Om Sai Computer Institute app </title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f4f8ff;
+    color:#222;
+    overflow-x:hidden;
+}
+
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    padding:18px 10%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(255,255,255,.7);
+    backdrop-filter:blur(15px);
+    z-index:999;
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-weight:700;
+}
+
+.logo img{
+    width:45px;
+}
+
+.menu{
+    display:flex;
+    gap:35px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#222;
+    font-weight:500;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#0b65ff;
+}
+
+header{
+    min-height:100vh;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    padding:120px 10%;
+    background:linear-gradient(135deg,#ffffff,#edf4ff);
+}
+
+.hero-left h1{
+    font-size:60px;
+    font-weight:800;
+    line-height:1.1;
+}
+
+.hero-left span{
+    color:#0b65ff;
+}
+
+.hero-left p{
+    margin:30px 0;
+    font-size:18px;
+    line-height:1.8;
+    color:#666;
+}
+
+.buttons{
+    display:flex;
+    gap:20px;
+}
+
+.download{
+    padding:16px 35px;
+    background:#0b65ff;
+    color:#fff;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    box-shadow:0 15px 35px rgba(11,101,255,.3);
+    transition:.3s;
+}
+
+.download:hover{
+    transform:translateY(-5px);
+}
+
+.outline{
+    padding:16px 35px;
+    border:2px solid #0b65ff;
+    border-radius:50px;
+    text-decoration:none;
+    color:#0b65ff;
+    font-weight:600;
+}
+
+.hero-right{
+    display:flex;
+    justify-content:center;
+}
+
+.hero-right img{
+    width:90%;
+    border-radius:30px;
+    box-shadow:0 40px 70px rgba(0,0,0,.15);
+    animation:float 5s infinite ease-in-out;
+}
+
+@keyframes float{
+    50%{
+        transform:translateY(-18px);
+    }
+}
+
+section{
+    padding:100px 10%;
+}
+
+section h2{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:50px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:#fff;
+    padding:40px;
+    text-align:center;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.07);
+    transition:.4s;
+    font-size:45px;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    margin:20px 0;
+    font-size:22px;
+}
+
+.card p{
+    font-size:15px;
+    color:#777;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:25px;
+    box-shadow:0 25px 50px rgba(0,0,0,.15);
+}
+
+.install{
+    background:#0b65ff;
+    color:#fff;
+    text-align:center;
+}
+
+.steps{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    margin-top:40px;
+    flex-wrap:wrap;
+}
+
+.steps div{
+    padding:25px 40px;
+    background:rgba(255,255,255,.15);
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+}
+
+.download-box{
+    text-align:center;
+}
+
+.download-box a{
+    display:inline-block;
+    margin-top:30px;
+    padding:18px 50px;
+    background:#0b65ff;
+    border-radius:50px;
+    text-decoration:none;
+    color:#fff;
+    font-size:20px;
+    font-weight:700;
+}
+
+footer{
+    padding:35px;
+    text-align:center;
+    background:#081633;
+    color:#fff;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width:900px){
+
+nav{
+    padding:14px 20px;
+}
+
+.logo{
+    gap:10px;
+}
+
+.logo img{
+    width:38px;
+}
+
+.logo h2{
+    font-size:20px;
+}
+
+.menu{
+    display:none;
+}
+
+header{
+    grid-template-columns:1fr;
+    padding:95px 20px 50px;
+    text-align:center;
+    min-height:auto;
+    gap:35px;
+}
+
+.hero-left{
+    order:2;
+}
+
+.hero-right{
+    order:1;
+    margin:0;
+}
+
+.hero-right img{
+    width:100%;
+    max-width:420px;
+    border-radius:20px;
+}
+
+.hero-left h1{
+    font-size:36px;
+    line-height:1.15;
+}
+
+.hero-left p{
+    font-size:16px;
+    line-height:1.7;
+    margin:20px 0 30px;
+}
+
+.buttons{
+    flex-direction:column;
+    align-items:center;
+    gap:15px;
+}
+
+.download,
+.outline{
+    width:100%;
+    max-width:320px;
+    padding:16px;
+    text-align:center;
+}
+
+section{
+    padding:60px 20px;
+}
+
+section h2{
+    font-size:30px;
+    margin-bottom:35px;
+}
+
+.cards{
+    grid-template-columns:1fr;
+    gap:20px;
+}
+
+.card{
+    padding:30px 20px;
+    font-size:40px;
+    border-radius:18px;
+}
+
+.card h3{
+    font-size:20px;
+    margin:15px 0 10px;
+}
+
+.card p{
+    font-size:15px;
+}
+
+.gallery{
+    grid-template-columns:1fr;
+    gap:20px;
+}
+
+.gallery img{
+    border-radius:18px;
+}
+
+.steps{
+    flex-direction:column;
+    gap:18px;
+    margin-top:25px;
+}
+
+.steps div{
+    width:100%;
+    padding:18px;
+    font-size:18px;
+}
+
+.download-box h2{
+    font-size:30px;
+}
+
+.download-box p{
+    font-size:16px;
+}
+
+.download-box a{
+    width:100%;
+    max-width:320px;
+    padding:18px;
+    font-size:18px;
+}
+
+footer{
+    padding:25px;
+    font-size:14px;
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">
+        <img src="logo.png" alt="Logo">
+        <h2>Om Sai Computer Institute</h2>
+    </div>
+
+    <div class="menu">
+        <a href="#features">Features</a>
+        <a href="#screenshots">Screenshots</a>
+        <a href="#download">Download</a>
+    </div>
+</nav>
+
+<header>
+
+<div class="hero-left">
+    <h1>
+        Your Learning.<br>
+        <span>Your Progress.</span>
+    </h1>
+
+    <p>
+        Access Courses, Quiz, Fees, Results, Notifications and much more in one beautiful application.
+    </p>
+
+    <div class="buttons">
+        <a class="download" href="app.apk" download>⬇ Download APK</a>
+        <a class="outline" href="#features">Learn More</a>
+    </div>
+</div>
+
+<div class="hero-right">
+    <img src="hero2.jpeg" alt="App Preview">
+</div>
+
+</header>
+
+<section id="features">
+
+<h2>Everything You Need</h2>
+
+<div class="cards">
+
+<div class="card">
+📚
+<h3>Courses</h3>
+<p>Access lessons anytime.</p>
+</div>
+
+<div class="card">
+💳
+<h3>Fee Status</h3>
+<p>Track payments instantly.</p>
+</div>
+
+<div class="card">
+🏆
+<h3>Quiz</h3>
+<p>Practice & Leaderboard.</p>
+</div>
+
+<div class="card">
+📅
+<h3>Schedule</h3>
+<p>Stay updated.</p>
+</div>
+
+<div class="card">
+🔔
+<h3>Notifications</h3>
+<p>Never miss announcements.</p>
+</div>
+
+<div class="card">
+📈
+<h3>Progress</h3>
+<p>Monitor your learning.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="screenshots">
+
+<h2>App Preview</h2>
+
+<div class="gallery">
+    <img src="hero1.jpeg" alt="Screenshot 1">
+    <img src="hero2.jpeg" alt="Screenshot 2">
+</div>
+
+</section>
+
+<section class="install">
+
+<h2>Install in 3 Easy Steps</h2>
+
+<div class="steps">
+    <div>1️⃣ Download APK</div>
+    <div>2️⃣ Tap Install</div>
+    <div>3️⃣ Start Learning</div>
+</div>
+
+</section>
+
+<section id="download" class="download-box">
+
+<h2>Ready to Learn?</h2>
+
+<p>Download the latest version now.</p>
+
+<a href="app.apk" download>Download Now</a>
+
+</section>
+
+<footer>
+© 2026 Om Sai Computer Institute
+</footer>
+
+</body>
+</html>
